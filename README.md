@@ -1,7 +1,7 @@
 # Nicomak - Application de Remerciements
 
 ## Installation
-1. Clonez le projet : `git clone <url-du-repository>`
+1. Clonez le projet : `git clone https://github.com/mds-iyad/remerciement-symfony.git`
 2. Installez les dépendances PHP : `composer install`
 3. Configurez l’environnement :
    - Copiez `.env` vers `.env.local` et ajustez les paramètres si nécessaire.
