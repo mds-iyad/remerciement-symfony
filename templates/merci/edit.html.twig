@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modifier Merci{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mb-4">Modifier le Merci</h1>
+
+    <div class="container">
+        {{ form_start(form) }}
+            <div class="mb-3">
+                {{ form_label(form.recipient) }}
+                {{ form_widget(form.recipient, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.recipient) }}
+            </div>
+
+            <div class="mb-3">
+                {{ form_label(form.reason) }}
+                {{ form_widget(form.reason, {'attr': {'class': 'form-control', 'placeholder': 'Raison du merci...'}}) }}
+                {{ form_errors(form.reason) }}
+            </div>
+
+            <button type="submit" class="btn btn-warning">Enregistrer les Modifications</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

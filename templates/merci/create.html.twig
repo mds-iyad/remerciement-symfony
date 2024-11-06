@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Dire Merci{% endblock %}
+
+{% block body %}
+    <h1 class="text-center mb-4">Dire Merci à un Collègue</h1>
+
+    <div class="container">
+        {{ form_start(form) }}
+
+            <div class="mb-3">
+                {{ form_label(form.author) }}
+                {{ form_widget(form.author, {
+                    'attr': {
+                        'class': 'form-control',
+                        'readonly': app.user ? true : false,
+                    },
+                    'data': app.user and app.user.salarie ? app.user.salarie.name : '' 
+                }) }}
+                {{ form_errors(form.author) }}
+            </div>
+            
+            <div class="mb-3">
+                {{ form_label(form.recipient) }}
+                {{ form_widget(form.recipient, {'attr': {'class': 'form-control'}}) }}
+                {{ form_errors(form.recipient) }}
+            </div>
+            
+            <div class="mb-3">
+                {{ form_label(form.reason) }}
+                {{ form_widget(form.reason, {'attr': {'class': 'form-control', 'placeholder': 'Raison du merci...'}}) }}
+                {{ form_errors(form.reason) }}
+            </div>
+
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary">Envoyer Merci</button>
+            </div>
+
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

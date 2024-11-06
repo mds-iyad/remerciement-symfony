@@ -1,0 +1,49 @@
+{# templates/registration/register.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h3>Register</h3>
+                    </div>
+                    <div class="card-body">
+                        {{ form_start(registrationForm) }}
+
+                        <div class="mb-3">
+                            {{ form_label(registrationForm.username, 'Username', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(registrationForm.username, {'attr': {'class': 'form-control'}}) }}
+                            {{ form_errors(registrationForm.username) }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form_label(registrationForm.plainPassword, 'Password', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control'}}) }}
+                            {{ form_errors(registrationForm.plainPassword) }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form_label(registrationForm.salarie, 'I am', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(registrationForm.salarie, {'attr': {'class': 'form-control'}}) }}
+                            {{ form_errors(registrationForm.salarie) }}
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary btn-block">Register</button>
+                        </div>
+
+                        {{ form_end(registrationForm) }}
+
+                        <div class="text-center mt-3">
+                            <a href="{{ path('app_login') }}" class="btn btn-link">Already have an account? Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
