@@ -1,4 +1,4 @@
-# Nicomak - Application de Remerciements
+# Application de Remerciements
 
 ## Installation
 1. Clonez le projet : `git clone https://github.com/mds-iyad/remerciement-symfony.git`
